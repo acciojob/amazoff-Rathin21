@@ -1,5 +1,8 @@
 package com.driver;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Order {
 
     private String id;
@@ -9,6 +12,7 @@ public class Order {
 
         // The deliveryTime has to converted from string to int and then stored in the attribute
         //deliveryTime  = HH*60 + MM
+        this.deliveryTime = TimeConverter.convertTimeStringtoInt(deliveryTime);
     }
 
     public String getId() {
